@@ -4,9 +4,9 @@ Este proyecto utiliza [Puppeteer](https://pptr.dev/) para automatizar el proceso
 
 ## Características
 
-- Automáticamente inicia sesión en la página de estudiantes de UMAS.
+- Automatiza el inicio de sesión en la página de estudiantes de UMAS.
 - Navega a la sección de concentración de notas.
-- Extrae la información de las notas en formato tabular.
+- Extrae información de las notas en formato tabular.
 - Genera un archivo CSV con el nombre del usuario y el sufijo `-notas`.
 
 ## Requisitos
@@ -47,24 +47,15 @@ Antes de comenzar, asegúrate de tener instalados:
     node scraper.js
     ```
 
-3. Una vez que el script finalice, generará un archivo CSV con el formato `<NombreUsuario>-notas.csv` en el directorio raíz del proyecto.
+3. Una vez que el script finalice, se generará un archivo CSV con el formato `<NombreUsuario>-notas.csv` en el directorio raíz del proyecto.
 
     Por ejemplo, si tu nombre es "Juan Pérez", el archivo generado será `Juan-notas.csv`.
 
 ## Estructura del Proyecto
 
-## Funcionalidad del Script
-
-1. **Inicio de Sesión:**
-   - Utiliza Puppeteer para navegar a [UMAS](https://umas.ipss.cl).
-   - Inicia sesión usando las credenciales proporcionadas.
-
-2. **Extracción del Nombre del Usuario:**
-   - Obtiene el nombre del usuario desde el elemento HTML `.user-name span` y lo formatea.
-
-3. **Acceso a las Notas:**
-   - Navega a la sección "Concentración de Notas" y extrae la información de la tabla.
-
-4. **Formato del CSV:**
-   - Limpia espacios innecesarios en el contenido.
-   - Genera un archivo CSV con el nombre del usuario y el sufijo `-notas.csv`
+```plaintext
+scraper-notas/
+├── scraper.js       # Script principal que realiza el scraping
+├── README.md        # Documentación del proyecto
+├── package.json     # Dependencias del proyecto
+└── notas.csv        # Archivo generado con las notas
